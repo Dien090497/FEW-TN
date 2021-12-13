@@ -1,0 +1,31 @@
+.mainEditNews{
+    display: flex;
+    flex: 1;
+    background-color: #DFDFDF;
+    height: auto;
+}
+.viewHeaderEditNews{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+}
+.viewMainEditNews{
+    flex: 1;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+}
+.viewInputDate{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+.iconCalendar{
+    width: 60px;
+    height: 60px;
+    color: red;
+}

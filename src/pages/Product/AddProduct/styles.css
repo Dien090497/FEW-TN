@@ -1,0 +1,102 @@
+.mainAddProduct{
+    display: flex;
+    flex: 1;
+    background-color: #DFDFDF;
+}
+.viewHeaderAddProduct{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+}
+.viewMainAddProduct{
+    display: flex;
+    flex: 1;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    flex-direction: column;
+}
+form{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.viewForm{
+    display: flex;
+    flex-direction: row;
+}
+.columnForm{
+    margin-bottom: auto;
+}
+.formRow{
+    display: flex;
+    padding: 0 20px;
+}
+.label{
+    color: #4A5568;
+    margin: 10px 0px;
+}
+.textInput{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: #707070 1px solid;
+    padding-left: 10px;
+}
+.viewFileInput{
+    border-radius: 5px;
+    border: #707070 1px solid;
+    width: 100%;
+}
+.inputImage{
+    display: none;
+}
+.labelFile{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.imagePreview{
+    width: 18%;
+    height: 120px;
+    margin: 5px;
+    padding: 10px;
+    background-color: #ffa6a6;
+    border-radius: 10px;
+}
+.viewQnt{
+    border-radius: 5px;
+    border: #707070 1px solid;
+    width: 100%;
+    padding: 10px;
+}
+.viewQnt2{
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+}
+.inputQnt{
+    padding: 5px;
+}
+.titleQnt{
+    padding: 5px;
+    text-align: center;
+}
+.btnAddProduct{
+    width: 40%;
+    height: 40px;
+    margin-top: 50px;
+    background-color: #FF0000;
+    border-radius: 5px;
+    color: white;
+    border: red 1px;
+    font-family: 'Roboto-Bold', serif;
+    font-size: 16px;
+}

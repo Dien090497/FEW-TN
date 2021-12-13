@@ -1,0 +1,56 @@
+.mainProduct{
+    display: flex;
+    flex: 1;
+    background-color: #DFDFDF;
+    height: auto;
+}
+.viewHeaderProduct{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+}
+.viewMainProduct{
+    display: flex;
+    flex: 1;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    flex-direction: column;
+}
+table, td, th, tr {
+    border: 1px solid black;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.page{
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    justify-content: center;
+}
+.viewActionProduct{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.iconActionProduct:hover{
+ cursor: pointer
+}
+.size{
+    display: flex;
+    height: 54px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.textSize{
+    margin: 5px;
+}

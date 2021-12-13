@@ -1,0 +1,60 @@
+.mainAddNews{
+    display: flex;
+    flex: 1;
+    background-color: #DFDFDF;
+    height: auto;
+}
+.viewHeaderAddNews{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+}
+.viewMainAddNews{
+    flex: 1;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+}
+.content{
+    width: auto;
+    height: auto;
+}
+
+.viewTitle{
+    width: 100%;
+    box-shadow: 2px 2px 2px 2px #545454;
+    padding: 20px;
+    display: flex;
+    border-radius: 20px;
+}
+.inputIngTitleAddNews{
+    display: flex;
+}
+.viewTitle img{
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #545454;
+}
+.txtTitleAddNews{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
+}
+.addViewNews{
+    padding: 20px;
+    align-self: start;
+}
+.viewContent{
+    width: auto;
+    margin-left: 20px;
+}
+.btnUploadImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

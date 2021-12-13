@@ -1,0 +1,59 @@
+.mainDetailBill{
+    display: flex;
+    flex: 1;
+    background-color: #DFDFDF;
+}
+.viewHeaderDetailBill{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+}
+.viewMainDetailBill{
+    display: flex;
+    flex: 1;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.boxViewHeader{
+    border: black 1px solid;
+    padding: 20px;
+    flex: 1;
+    margin: 10px;
+    border-radius: 10px;
+}
+table, th, tr{
+    border: 1px solid #707070;
+    text-align: center;
+}
+.th{
+    border: 1px solid #707070;
+    text-align: center;
+}
+td, th{
+    border: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: auto;
+    margin: 10px;
+}
+.viewStatus{
+    padding: 0px 20px;
+}
+.viewAddress{
+    display: flex;
+    padding: 15px 0;
+}
+.iconAddress :hover{
+    cursor: pointer;
+}
