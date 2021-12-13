@@ -16,7 +16,7 @@ export default class Loading extends Component {
   open = () => {
     swal.fire({
       title: 'Đang tải',
-      html: 'Vui lòng đợi một xúi!',
+      html: 'Vui lòng đợi một xiu!',
       timerProgressBar: true,
       didOpen: () => {
         swal.showLoading()
