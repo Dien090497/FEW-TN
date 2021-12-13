@@ -39,7 +39,7 @@ function News() {
                     <div className='viewTitle'>
                         <div className='btnUploadImage'>
                           <img
-                              src={image ? image.preview : require('../../../assets/image/bg_img.png')}
+                              src={image ? image.preview : require('../../../assets/image/bg_img.png').default}
                               width={160} />
                             <div>
                                 <label htmlFor='file' className='labelFile'>Chọn ảnh</label>

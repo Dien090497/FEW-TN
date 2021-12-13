@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 function EditNews() {
 
     const history = useHistory();
-    const [image, setImage] = useState(require('../../../assets/image/bg_img.png'));
+    const [image, setImage] = useState(require('../../../assets/image/bg_img.png').default);
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     // const [date, setDate] = useState(new Date().toISOString());
@@ -43,7 +43,7 @@ function EditNews() {
                     <div className='viewTitle'>
                         <div className='btnUploadImage'>
                             <img
-                                src={image}
+                                src={image.default}
                                 width={160} />
                             <div>
                                 <label htmlFor='file' className='labelFile'>Chọn ảnh</label>

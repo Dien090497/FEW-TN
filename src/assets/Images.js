@@ -1,6 +1,6 @@
 export const Images = {
-  warning: require('./image/icon_warning.png'),
-  error: require('./image/icon_error.png'),
-  success: require('./image/icon_success.svg'),
-  question: require('./image/icon_question.png'),
+  warning: require('./image/icon_warning.png').default,
+  error: require('./image/icon_error.png').default,
+  success: require('./image/icon_success.svg').default,
+  question: require('./image/icon_question.png').default,
 }

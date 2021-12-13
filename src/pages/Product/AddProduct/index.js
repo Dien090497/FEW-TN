@@ -234,14 +234,14 @@ function AddProduct() {
                                     )
                                 })}
                                 <div>
-                                    <img src={require('../../../assets/image/remove.svg')} width={40} height={40}
+                                    <img src={require('../../../assets/image/remove.svg').default} width={40} height={40}
                                          onClick={() => {
                                              if (countQnt <= 0) return;
                                              const newCountQnt = Object.assign([], countQnt);
                                              newCountQnt.splice(0, 1);
                                              setCountQnt(newCountQnt)
                                          }}/>
-                                    <img src={require('../../../assets/image/add2.svg')} width={40} height={40}
+                                    <img src={require('../../../assets/image/add2.svg').default} width={40} height={40}
                                          onClick={() => {
                                              const newCountQnt = Object.assign([], countQnt);
                                              newCountQnt.push('item');

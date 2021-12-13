@@ -13,7 +13,7 @@ function News() {
             <div className='viewMainNews'>
                 <div className='viewHeaderNews'>
                     <h1>DANH SÁCH TIN TỨC</h1>
-                    <img src={require('../../assets/image/ic_add_product.png')}
+                    <img src={require('../../assets/image/ic_add_product.png').default}
                          style={{width: 60, height: 60}}
                          onClick={()=>{
                              history.push('/add-news')
@@ -23,17 +23,17 @@ function News() {
                     {news.length > 0 && news.map((obj,i)=>{
                         return(
                             <div className='viewItem'>
-                                <img src={require('../../assets/image/logo.png')} width={80} height={80}/>
+                                <img src={require('../../assets/image/logo.png').default} width={80} height={80}/>
                                 <div className='itemTitle'>
                                     <h4>Giảm giá 40% cho tất cả các mặt hàng từ 12/09 đến 14/09</h4>
                                     <p>31/08/2021</p>
                                 </div>
                                 <div className='viewSetting'>
-                                    <img src={require('../../assets/image/ic_edit_news.png')} width={60} height={60}
+                                    <img src={require('../../assets/image/ic_edit_news.png').default} width={60} height={60}
                                          onClick={() => {
                                              history.push('/edit-news')
                                          }}/>
-                                    <img src={require('../../assets/image/ic_remove_news.png')} width={60} height={60}
+                                    <img src={require('../../assets/image/ic_remove_news.png').default} width={60} height={60}
                                          onClick={() => {
 
                                          }}/>
