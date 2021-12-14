@@ -101,6 +101,7 @@ function AddProduct() {
                                 placeholder={"Nhập giá bán"}
                                 aria-valuemin={1}
                                 step={1}
+                                min={1}
                                 required={true}
                                 onChange={v=> setPrice(parseInt(v.target.value))}
                             />
@@ -111,6 +112,7 @@ function AddProduct() {
                                 placeholder={"Nhập giá nhập"}
                                 step={1}
                                 required={true}
+                                min={1}
                                 aria-valuemin={1}
                                 onChange={v=> setImportPrice(Number(v.target.value))}
                             />
@@ -122,8 +124,18 @@ function AddProduct() {
                                 aria-valuemax={100}
                                 aria-valuemin={0}
                                 step={0.01}
+                                min={0}
+                                max={100}
+                                maxLength={2}
                                 required={true}
-                                onChange={v=> setSale(Number(v.target.value))}
+                                onChange={v=> {
+                                    if (Number(v.target.value) < 0){
+                                        return  setSale(0)
+                                    }else if(Number(v.target.value) > 100) {
+                                        return  setSale(100)
+                                    }
+                                    // setSale(Number(v.target.value))
+                                }}
                             />
                             <label className='label'>Loại</label>
                             <select

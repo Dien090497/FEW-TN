@@ -66,7 +66,7 @@ function News() {
                     {news.length > 0 && news.map((obj,i)=>{
                         return(
                             <div className='viewItem'>
-                                <img src={[hostUrl,obj.image].join('/')} width={80} height={80}/>
+                                <img src={[hostUrl,obj.image].join('/')} width={80} height={80} style={{borderRadius: '10px'}}/>
                                 <div className='itemTitle'>
                                     <h4>{obj.title}</h4>
                                     <p>{Moment(obj.publication_date).format('DD/MM/YYYY')}</p>

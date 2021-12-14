@@ -1,6 +1,6 @@
 import AppConfig from '../../functions/AppConfig';
 
-export const appConfig = AppConfig.test;
+export const appConfig = AppConfig.product;
 
 //////////////////////////////////////////////////////
 export const hostUrl = appConfig.rootDomain;
