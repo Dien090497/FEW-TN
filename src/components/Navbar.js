@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
+import DataLocal from "../functions/dataLocal";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -27,6 +28,19 @@ function Navbar() {
               </Link>
             </li>
             {SidebarData.map((item, index) => {
+              if (item.path==='logout'){
+                return (
+                  <li key={index} className={item.cName} onClick={()=>{
+                    DataLocal.removeToken()
+                    window.location.href = '/';
+                  }}>
+                    <Link to={item.path}>
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                );
+              }
               return (
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>

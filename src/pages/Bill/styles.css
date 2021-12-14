@@ -1,47 +1,23 @@
-.mainBill{
+.mainAccount{
     display: flex;
     flex: 1;
-    background-color: #DFDFDF;
 }
-.viewHeaderBill{
+.viewHeaderAccount{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 80px;
     width: 100%;
 }
-.viewMainBill{
+.viewMainAccount{
     display: flex;
     flex: 1;
-    background-color: white;
     margin: 20px;
     border-radius: 20px;
     padding: 20px;
     flex-direction: column;
 }
-.page{
-    display: flex;
-    width: 100%;
-    margin-top: 30px;
-    justify-content: center;
-}
-table, td, th {
-    border: 1px solid black;
-    text-align: center;
-}
-.th{
-    border: 1px solid #707070;
-    text-align: center;
-}
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-.detailText{
-    text-decoration: underline;
-    font-family: 'Roboto-Bold', serif;
-}
-
-.detailText p:hover{
-    cursor: pointer;
+.viewContent{
+    width: auto;
+    background-color: #4A5568;
 }

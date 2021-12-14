@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Login from "./pages/Login";
 import DataLocal from "./functions/dataLocal";
 import Product from "./pages/Product";
@@ -9,6 +9,8 @@ import News from "./pages/News";
 import AddProduct from "./pages/Product/AddProduct";
 import EditProduct from "./pages/Product/EditProduct";
 import Bill from "./pages/Bill";
+import Administrator from "./pages/Administrator";
+import SettingAdmin from "./pages/Administrator/Setting";
 import DetailBill from "./pages/Bill/DetailBill";
 import AddNews from "./pages/News/AddNews";
 import EditNews from "./pages/News/EditNews";
@@ -20,7 +22,6 @@ function App() {
     DataLocal.loadIdAdmin();
 
     const [token, setToken] = useState(DataLocal.token);
-
     const [show, setShow] = useState(false);
     const [notification, setNotification] = useState({title: '', body: ''});
     const [isTokenFound, setTokenFound] = useState(false);
@@ -55,6 +56,8 @@ function App() {
           <Route path='/news' component={News}/>
           <Route path='/add-news' component={AddNews}/>
           <Route path='/edit-news' component={EditNews}/>
+          <Route path='/setting' component={Administrator}/>
+          <Route path='/administrator' component={SettingAdmin}/>
         </Switch>
       </Router>
     </>

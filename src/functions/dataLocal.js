@@ -50,6 +50,15 @@ async function saveIdAdmin(data) {
     }
 }
 
+async function removeToken() {
+    try {
+        return sessionStorage.removeItem(keyToken);
+    } catch (e) {
+        console.log(e);
+        return false;
+    }
+}
+
 const DataLocal = {
 
     saveToken,
@@ -57,6 +66,8 @@ const DataLocal = {
 
     saveIdAdmin,
     loadIdAdmin,
+
+    removeToken,
 
     token,
     id_admin

@@ -196,12 +196,12 @@ function AddProduct() {
                                 />
 
                             </div>
-                            <label className='label'>Thông tin chi tiết</label>
+                            <label className='label'>Thông tin chi tiếtt</label>
                             <textarea
                                 className='textInput'
                                 name="description"
                                 placeholder={"Nhập mô tả"}
-                                rows={3}
+                                rows={10}
                                 defaultValue={description}
                                 onChange={v=> setDescription(v.target.value)}
                             />

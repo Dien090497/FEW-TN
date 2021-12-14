@@ -1,5 +1,4 @@
 import React, {Component } from 'react';
-import * as IoIcons from "react-icons/io";
 import { withSwalInstance } from 'sweetalert2-react';
 import swal from 'sweetalert2';
 require("bootstrap/dist/css/bootstrap.css");
@@ -15,12 +14,6 @@ export default class AlertConfirm extends Component {
     }
 
     open = (text, icon, history) => {
-        // swal.fire({
-        //     title: 'AE Shop',
-        //     text: text,
-        //     icon: type,
-        //     confirmButtonColor: 'red'
-        // })
         swal.fire({
             title: 'AE Shop',
             text: text,
