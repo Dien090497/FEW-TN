@@ -24,8 +24,9 @@ export default class AlertConfirmCancel extends Component {
       cancelButtonText: 'Hủy',
       cancelButtonColor: 'gray',
       confirmButtonColor: 'red',
+      padding: 40,
       preConfirm(inputValue) {
-        action();
+        if (action()) return action();
       }
     })
   }

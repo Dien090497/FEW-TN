@@ -28,7 +28,7 @@ function Bill() {
                 setData(res.data.order)
             },
             failure: err =>{
-                refAlert.current.open('Xóa thất bại! Vui lòng thử lại',Images.warning);
+                refAlert.current.open('Xóa thất bại! Vui lòng thử lại',Images.warning,()=>{});
             },
             refLoading
         })

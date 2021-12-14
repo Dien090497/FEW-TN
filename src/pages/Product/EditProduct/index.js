@@ -100,8 +100,9 @@ function AddProduct() {
 
     editProductApi(data,{
       success: res =>{
-        refAlert.current.open('Sửa thành công',Images.success)
-        // history.push('/')
+        refAlert.current.open('Sửa thành công',Images.success,()=>{
+          history.goBack()
+        })
       },
       refLoading
     })

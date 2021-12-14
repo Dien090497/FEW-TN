@@ -29,12 +29,12 @@ function Product() {
     const deleteProduct = (idProduct) =>{
         deleteProductAPI(idProduct,{
             success: res =>{
-                if (res.data.message === 'forbidden') return refAlert.current.open('Không thể xóa sản phẩm này',Images.error);
-                refAlert.current.open('Xóa thàn công',Images.success);
+                if (res.data.message === 'forbidden') return refAlert.current.open('Không thể xóa sản phẩm này',Images.error,()=>{});
+                refAlert.current.open('Xóa thàn công',Images.success,()=>{});
                 listProduct()
             },
             failure: err =>{
-                refAlert.current.open('Xóa thất bại! Vui lòng thử lại',Images.warning);
+                refAlert.current.open('Xóa thất bại! Vui lòng thử lại',Images.warning,()=>{});
             },
             refLoading
         })
@@ -66,14 +66,14 @@ function Product() {
                             setData(res.data.products);
                         },
                         failure: err =>{
-                            refAlert.current.open('Lỗi Server! Vui lòng thử lại',Images.warning);
+                            refAlert.current.open('Lỗi Server! Vui lòng thử lại',Images.warning,()=>{});
                         },
                         refLoading
                     })
                 }
             },
             failure: err =>{
-                refAlert.current.open('Lỗi Server! Vui lòng thử lại',Images.warning);
+                refAlert.current.open('Lỗi Server! Vui lòng thử lại',Images.warning,()=>{});
             },
             refLoading
         })

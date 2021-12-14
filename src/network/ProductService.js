@@ -40,7 +40,6 @@ export function addProductApi(
   data,
   {success, failure, refLoading} = {},
 ) {
-    console.log(data)
     const formData = new FormData();
     formData.append('name',data.name)
     formData.append('export_price',data.export_price)

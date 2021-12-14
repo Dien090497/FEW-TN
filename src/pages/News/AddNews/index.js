@@ -1,9 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './styles.css'
 import { useHistory } from "react-router-dom";
+import {Images} from "../../../assets/Images";
+import {addNewsApi} from "../../../network/NewsService";
+import AlertConfirm from "../../../functions/AlertConfirm";
+import Loading from "../../../functions/Loading";
 
 function News() {
     const history = useHistory();
+    const refAlert = useRef();
+    const refLoading = useRef();
     const [image, setImage] = useState();
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
@@ -23,12 +29,24 @@ function News() {
     }
 
     const handleSubmit = (e) =>{
-        console.log('123')
         e.preventDefault();
-        history.push('/news')
+        const data ={}
+        data.title = title
+        data.content = content;
+        data.imageNews = image;
+        addNewsApi(data,{
+            success: res =>{
+                refAlert.current.open('Thêm thành công',Images.success,()=>{
+                    history.goBack()
+                })
+            },
+            failure: err =>{
+                refAlert.current.open('Thêm thất bại',Images.error,()=>{})
+            },
+            refLoading
+        })
     }
 
-    console.log('image')
     return (
         <div className='mainAddNews'>
             <div className='viewMainAddNews'>
@@ -48,7 +66,6 @@ function News() {
                                     className='inputImage'
                                     type="file" name="pictureNewtTitle"
                                     accept="image/*"
-                                    multiple={true}
                                     onChange={onChangePicture}
                                     required={true}
                                 />
@@ -57,22 +74,26 @@ function News() {
                         <div style={{width: '100%'}} className='viewContent'>
                             <input
                                 className='textInput'
-                                type="text" name="impot_price"
+                                type="text" name="title"
                                 placeholder={"Nhập tiêu đề"}
                                 required={true}
                                 onChange={(t)=>{
-                                    setTitle(t)
+                                    setTitle(t.target.value)
                                 }}
                             />
                             <textarea rows={10} className='txtTitleAddNews'
+                                      name='content'
+                                      required={true}
                                       onChange={(t)=>{
-                                          setContent(t)
+                                          setContent(t.target.value)
                                       }}/>
                         </div>
                     </div>
-                    <input type="submit" value={'Thêm'} className='btn'/>
+                    <input type="submit" value={'Thêm'} className='btnAddNews'/>
                 </form>
             </div>
+            <Loading ref={refLoading}/>
+            <AlertConfirm ref={refAlert}/>
         </div>
     );
 }

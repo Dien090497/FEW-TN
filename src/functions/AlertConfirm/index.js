@@ -14,7 +14,7 @@ export default class AlertConfirm extends Component {
         }
     }
 
-    open = (text, icon) => {
+    open = (text, icon, history) => {
         // swal.fire({
         //     title: 'AE Shop',
         //     text: text,
@@ -28,7 +28,10 @@ export default class AlertConfirm extends Component {
             imageWidth: 200,
             imageHeight: 200,
             imageAlt: 'Custom image',
-            confirmButtonColor: 'red'
+            confirmButtonColor: 'red',
+            preConfirm(inputValue) {
+                if (history()) return history()
+            }
         })
     }
 

@@ -66,11 +66,13 @@ function AddProduct() {
         data.qnt = qnt;
         addProductApi(data,{
             success: res =>{
-                refAlert.current.open('Thêm thành công',Images.success)
-                history.push('/')
+                refAlert.current.open('Thêm thành công',Images.success,()=>{
+                    history.goBack()
+                })
+
             },
             failure: err =>{
-                refAlert.current.open('Thêm thất bại',Images.error)
+                refAlert.current.open('Thêm thất bại',Images.error,()=>{})
             },
             refLoading
         })

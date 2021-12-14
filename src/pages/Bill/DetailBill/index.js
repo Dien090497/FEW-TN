@@ -49,15 +49,15 @@ function DetailBill() {
 
             },
             failure: err =>{
-                refAlert.current.open('Lỗi Server! Vui lòng thử lại',Images.error);
+                refAlert.current.open('Lỗi Server! Vui lòng thử lại',Images.error,()=>{});
             },
             refLoading
         })
     },[])
 
     const changeStatus = (value) =>{
-        if (status==='3') return refAlert.current.open('Đơn hàng đã bị hủy! Không được sửa',Images.warning);
-        if (status==='2') return refAlert.current.open('Đơn này đã thanh toán thành công! Không thể sửa!',Images.success);
+        if (status==='3') return refAlert.current.open('Đơn hàng đã bị hủy! Không được sửa',Images.warning,()=>{});
+        if (status==='2') return refAlert.current.open('Đơn này đã thanh toán thành công! Không thể sửa!',Images.success,()=>{});
         refAlert2.current.open('Xác nhận thay đổi trạng thái đơn hàng','warning',()=>{
             updateOrder({
                 id_bill: data.id_bill,
@@ -81,7 +81,7 @@ function DetailBill() {
         },{
             success: res =>{
                 setAddress(address)
-                refAlert.current.open('Cập nhật thành công',Images.success);
+                refAlert.current.open('Cập nhật thành công',Images.success,()=>{});
             },
             refLoading
         })
@@ -89,7 +89,7 @@ function DetailBill() {
     }
 
     const openInputAddress = () =>{
-        if (status !== '0') return refAlert.current.open('Đơn hàng đang được giao, không thể thay đổi dịa chỉ',Images.warning);
+        if (status !== '0') return refAlert.current.open('Đơn hàng đang được giao, không thể thay đổi dịa chỉ',Images.warning,()=>{});
         refInput.current.open('Địa chỉ giao hàng mới', (config)=>{
             changeAddress(config)
         });

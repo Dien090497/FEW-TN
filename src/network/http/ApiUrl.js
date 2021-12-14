@@ -1,6 +1,6 @@
 import AppConfig from '../../functions/AppConfig';
 
-export const appConfig = AppConfig.product;
+export const appConfig = AppConfig.test;
 
 //////////////////////////////////////////////////////
 export const hostUrl = appConfig.rootDomain;
@@ -13,6 +13,9 @@ export const product = hostUrl + '/product';
 
 //order
 export const order = hostUrl + '/order';
+
+//news
+export const news = hostUrl + '/news';
 
 /// url: string, obj: object
 export function assignUrlParams(url, obj) {
