@@ -1,9 +1,7 @@
 import React, {Component } from 'react';
-import { withSwalInstance } from 'sweetalert2-react';
 import swal from 'sweetalert2';
 require("bootstrap/dist/css/bootstrap.css");
 
-const SweetAlert = withSwalInstance(swal);
 
 export default class AlertConfirm extends Component {
     constructor(props) {
@@ -31,9 +29,6 @@ export default class AlertConfirm extends Component {
     render(){
         return (
             <div>
-                <SweetAlert
-                    show={this.state.show}
-                />
             </div>
         );
     }

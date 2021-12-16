@@ -6,15 +6,11 @@ import AlertConfirmCancel from "../../functions/AlertConfirmCancel";
 import Loading from "../../functions/Loading";
 import {useHistory} from "react-router-dom";
 
-import { withSwalInstance } from 'sweetalert2-react';
 import swal from 'sweetalert2';
 import {Images} from "../../assets/Images";
 import { changePasswordApi} from "../../network/ServiceAdministrator";
 import DataLocal from "../../functions/dataLocal";
 require("bootstrap/dist/css/bootstrap.css");
-
-const SweetAlert = withSwalInstance(swal);
-
 
 function Account() {
     const refAlert = useRef();
@@ -77,7 +73,6 @@ function Account() {
                     }}>Hủy</div>
                 </div>
             </div>
-            <SweetAlert/>
             <AlertConfirm ref={refAlert}/>
             <AlertConfirmCancel ref={refAlert2}/>
             <Loading ref={refLoading}/>
