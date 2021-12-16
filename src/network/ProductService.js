@@ -36,6 +36,16 @@ export function getInfo(
     });
 }
 
+export function getDetailProduct(
+    id_product,
+    {success, failure, refLoading} = {},
+) {
+    return get([product,id_product].join('/'), {
+        success,
+        failure, refLoading
+    });
+}
+
 export function addProductApi(
   data,
   {success, failure, refLoading} = {},

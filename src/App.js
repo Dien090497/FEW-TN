@@ -8,6 +8,7 @@ import Product from "./pages/Product";
 import News from "./pages/News";
 import AddProduct from "./pages/Product/AddProduct";
 import EditProduct from "./pages/Product/EditProduct";
+import SearchProduct from "./pages/Product/SearchProduct";
 import Bill from "./pages/Bill";
 import Administrator from "./pages/Administrator";
 import SettingAdmin from "./pages/Administrator/Setting";
@@ -51,6 +52,7 @@ function App() {
           <Route path='/' exact component={Product}/>
           <Route path='/add-product' exact component={AddProduct}/>
           <Route path='/edit-product' exact component={EditProduct}/>
+          <Route path='/search-product' exact component={SearchProduct}/>
           <Route path='/bill' component={Bill}/>
           <Route path='/detail-bill' component={DetailBill}/>
           <Route path='/news' component={News}/>

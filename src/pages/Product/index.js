@@ -84,9 +84,14 @@ function Product() {
             <div className='viewMainProduct'>
                 <div className='viewHeaderProduct'>
                     <h1>DANH SÁCH SẢN PHẨM</h1>
-                    <a href=""><IoIcons.IoIosAddCircle size={'60px'} color={'red'} onClick={()=>{
-                        history.push('/add-product')
-                    }}/></a>
+                    <div>
+                        <IoIcons.IoMdSearch className='iconProduct' size={'50px'} color={'red'} onClick={()=>{
+                            history.push('/search-product')
+                        }}/>
+                        <IoIcons.IoIosAddCircle className='iconProduct' size={'60px'} color={'red'} onClick={()=>{
+                            history.push('/add-product')
+                        }}/>
+                    </div>
                 </div>
                 <table>
                     <tbody>
@@ -103,7 +108,7 @@ function Product() {
                         return(
                           <tr key={i} style={{height: 80}}>
                               <th className='th'>{obj.name}</th>
-                              <th className='th'><img src={hostUrl+'/'+obj.src[0]} alt="" width={60} height={60}/></th>
+                              <th className='th'><img src={hostUrl+'/'+obj.src} alt="" width={60} height={60}/></th>
                               <th className='th'>{obj.export_price + '$'}</th>
                               <th className='th'>{obj.impot_price + '$'}</th>
                               <th className='th'>

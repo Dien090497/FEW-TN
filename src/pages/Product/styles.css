@@ -54,3 +54,7 @@ table {
 .textSize{
     margin: 5px;
 }
+
+.iconProduct :hover{
+    cursor: pointer;
+}

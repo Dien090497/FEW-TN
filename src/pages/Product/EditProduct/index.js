@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import '../styles.css'
 import {useHistory, useLocation} from "react-router-dom";
-import {editProductApi, getInfo} from "../../../network/ProductService";
+import {editProductApi, getDetailProduct, getInfo} from "../../../network/ProductService";
 import AlertConfirm from "../../../functions/AlertConfirm";
 import Loading from "../../../functions/Loading";
 import {hostUrl} from "../../../network/http/ApiUrl";
@@ -35,29 +35,29 @@ function AddProduct() {
       },
       refLoading
     })
-    setIdProduct(location.state.route.id_product)
-    setName(location.state.route.name);
-    setPrice(location.state.route.export_price);
-    setImportPrice(location.state.route.impot_price);
-    setSale(location.state.route.sale);
-    setStyle(location.state.route.id_style.toString());
-    setCategory(location.state.route.id_category.toString());
-    setBrand(location.state.route.id_brand.toString());
-    setDescription(location.state.route.description);
-    setCountQnt(location.state.route.size);
-    const newAvatar = [];
-    location.state.route.src.map((obj,i)=>{
-      newAvatar.push({preview: hostUrl+'/'+obj});
-    })
-    setAvatar(newAvatar);
-    const newQnt = [];
-    const newSize = [];
-    location.state.route.size.map((obj,i)=>{
-      newQnt.push(obj.qnt)
-      newSize.push(obj.size_name)
-    })
-    setQnt(newQnt);
-    setSize(newSize);
+    getDetailProduct(location.state.route.id_product,
+        {
+          success: res=>{
+            setIdProduct(res.data.id_product)
+            setName(res.data.name);
+            setPrice(res.data.export_price);
+            setImportPrice(res.data.impot_price);
+            setSale(res.data.sale);
+            setDescription(res.data.description);
+            setCategory(res.data.id_category.toString());
+            setStyle(res.data.id_style.toString());
+            setBrand(res.data.id_brand.toString());
+            setCountQnt(res.data.qnt);
+            const newAvatar = [];
+            res.data.src.map((obj,i)=>{
+              newAvatar.push({preview: hostUrl+'/'+obj});
+            })
+            setAvatar(newAvatar);
+            setQnt(res.data.qnt);
+            setSize(res.data.size);
+          }
+        })
+
     return()=>{
       avatar.length>0 && URL.revokeObjectURL(avatar.preview);
     }
@@ -86,7 +86,7 @@ function AddProduct() {
     data.id = idProduct
     data.name = name
     data.export_price = Number(price);
-    data.impot_price = Number(price);
+    data.impot_price = Number(importPrice);
     data.sale = Number(sale);
     data.id_category = parseInt(category);
     data.id_style = parseInt(style);
@@ -244,7 +244,8 @@ function AddProduct() {
                     <p>Số lượng</p>
                   </div>
                 </div>
-                {countQnt.length > 0 && countQnt.map((obj, i) => {
+                {countQnt && countQnt.length > 0 && countQnt.map((obj, i) => {
+                  console.log(countQnt)
                   return (
                     <div className='viewQnt2' key={i}>
                       <div className='inputQnt' style={{flex: 1}}>
@@ -296,7 +297,7 @@ function AddProduct() {
               </div>
             </div>
           </div>
-          <input type="submit" value={'Thêm'} className='btn'/>
+          <input type="submit" value={'Thêm'} className='btnAddProduct'/>
         </form>
       </div>
       <AlertConfirm ref={refAlert}/>
