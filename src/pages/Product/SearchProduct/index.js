@@ -9,7 +9,7 @@ import {styles} from "./styles";
 import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
 import '../../Product/styles.css'
-import {getCategoryApi, getRangePrice, searchNameApi, searchNameRangeApi} from "../../../network/SearchService";
+import {getCategoryApi, getRangePrice, searchNameRangeApi} from "../../../network/SearchService";
 import {deleteProductAPI} from "../../../network/ProductService";
 import {Images} from "../../../assets/Images";
 
