@@ -111,7 +111,7 @@ function AddProduct() {
   return (
     <div className='mainAddProduct' >
       <div className='viewMainAddProduct'>
-        <h1>THÊM SẢN PHẨM</h1>
+        <h1>SỬA THÔNG TIN SẢN PHẨM</h1>
         <form encType={'multipart/form-data'} onSubmit={handleSubmit}>
           <div className='viewForm'>
             <div style={{flex: 1, padding: 20}} className='columnForm'>
@@ -297,7 +297,7 @@ function AddProduct() {
               </div>
             </div>
           </div>
-          <input type="submit" value={'Thêm'} className='btnAddProduct'/>
+          <input type="submit" value={'Lưu'} className='btnAddProduct'/>
         </form>
       </div>
       <AlertConfirm ref={refAlert}/>
