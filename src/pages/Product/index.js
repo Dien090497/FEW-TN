@@ -30,8 +30,10 @@ function Product() {
         deleteProductAPI(idProduct,{
             success: res =>{
                 if (res.data.message === 'forbidden') return refAlert.current.open('Không thể xóa sản phẩm này',Images.error,()=>{});
-                refAlert.current.open('Xóa thàn công',Images.success,()=>{});
-                listProduct()
+                else {
+                    refAlert.current.open('Xóa thàn công',Images.success,()=>{});
+                    listProduct()
+                }
             },
             failure: err =>{
                 refAlert.current.open('Xóa thất bại! Vui lòng thử lại',Images.warning,()=>{});
