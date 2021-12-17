@@ -28,12 +28,12 @@ export const SidebarData = [
     icon: <IoIcons.IoIosSettings />,
     cName: 'nav-text'
   },
-  {
-    title: 'Thông tin về shop',
-    path: '/info',
-    icon: <IoIcons.IoIosInformationCircleOutline />,
-    cName: 'nav-text'
-  },
+  // {
+  //   title: 'Thông tin về shop',
+  //   path: '/info',
+  //   icon: <IoIcons.IoIosInformationCircleOutline />,
+  //   cName: 'nav-text'
+  // },
   {
     title: 'Đăng xuất',
     path: 'logout',

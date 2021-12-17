@@ -18,7 +18,7 @@ function Product() {
     const refAlert = useRef();
     const refLoading = useRef();
     const [page, setPage] = useState(0);
-    const [pageSize, setPageSize] = useState(5);
+    const [pageSize, setPageSize] = useState(10);
     const [count, setCount] = useState(0);
     const [data, setData] = useState([]);
 

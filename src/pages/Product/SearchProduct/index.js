@@ -97,37 +97,6 @@ function Product() {
                 </div>
                 <div style={styles.filter}>
                     <div style={styles.filterBox}>
-                        <p style={styles.textTitleFilter}>Giá</p>
-                        <div style={styles.viewPriceFilter}>
-                            <p style={styles.textPrice}>{range[0]+'$'}</p>
-                            <Nouislider
-                                style={styles.slider}
-                                start={[range[0],range[1]]}
-                                connect
-                                orientation="horizontal"
-                                behaviour="tap"
-                                range={{
-                                    min: rangeView[0],
-                                    max: rangeView[1]
-                                }}
-                                step={1}
-                                onUpdate={()=>{
-
-                                }}
-                                onChange={(v)=>{
-                                    setRange([parseInt(v[0]),parseInt(v[1])])
-                                }}
-                            />
-                            <p style={styles.textPrice}>{range[1]+'$'}</p>
-                        </div>
-                        <div style={styles.radio}>
-                            <input type="radio" value="option1" checked={sort === 0} onClick={()=> setSort(0)}/> - Tăng
-                        </div>
-                        <div style={styles.radio}>
-                            <input type="radio" value="option2" checked={sort === 1} onClick={() =>setSort(1)} /> - Giảm
-                        </div>
-                    </div>
-                    <div style={styles.filterBox}>
                         <p style={styles.textTitleFilter}>Khích thước</p>
                         <div style={styles.radio} >
                             <input type="radio" value="option1" checked={!!size[0]} onClick={() => {
@@ -173,6 +142,37 @@ function Product() {
                         </div>
                     </div>
                     <div style={styles.filterBox}>
+                        <p style={styles.textTitleFilter}>Giá</p>
+                        <div style={styles.viewPriceFilter}>
+                            <p style={styles.textPrice}>{range[0]+'$'}</p>
+                            <Nouislider
+                                style={styles.slider}
+                                start={[range[0],range[1]]}
+                                connect
+                                orientation="horizontal"
+                                behaviour="tap"
+                                range={{
+                                    min: rangeView[0],
+                                    max: rangeView[1]
+                                }}
+                                step={1}
+                                onUpdate={()=>{
+
+                                }}
+                                onChange={(v)=>{
+                                    setRange([parseInt(v[0]),parseInt(v[1])])
+                                }}
+                            />
+                            <p style={styles.textPrice}>{range[1]+'$'}</p>
+                        </div>
+                        <div style={styles.radio}>
+                            <input type="radio" value="option1" checked={sort === 0} onClick={()=> setSort(0)}/> - Tăng
+                        </div>
+                        <div style={styles.radio}>
+                            <input type="radio" value="option2" checked={sort === 1} onClick={() =>setSort(1)} /> - Giảm
+                        </div>
+                    </div>
+                    <div style={styles.filterBox}>
                         <p style={styles.textTitleFilter}>Loại</p>
                         {category.length>0 && category.map((obj,i)=>{
                             return(
@@ -190,13 +190,15 @@ function Product() {
                 <h4 style={styles.textSearch}>Kết quả tìm kiếm</h4>
                 <table>
                     <tbody>
-                    <tr style={{height: 54}}>
-                        <th className='th'>Tên sản phẩm</th>
-                        <th className='th'>Giá bán</th>
-                        <th className='th'>Giá Nhập</th>
-                        <th className='th'>Thương hiệu</th>
-                        <th className='th'>Thao tác</th>
-                    </tr>
+                    {data.length > 0 ? (
+                        <tr style={{height: 54}}>
+                            <th className='th'>Tên sản phẩm</th>
+                            <th className='th'>Giá bán</th>
+                            <th className='th'>Giá Nhập</th>
+                            <th className='th'>Thương hiệu</th>
+                            <th className='th'>Thao tác</th>
+                        </tr>
+                    ) : <p>Không có kết quả phù hợp</p> }
                     {data.length>0 && data.map((obj,i)=>{
                         return(
                             <tr key={i} style={{height: 80}}>
