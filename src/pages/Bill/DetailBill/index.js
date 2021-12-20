@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import './styles.css'
 import {useHistory, useLocation} from "react-router-dom";
-import {getDetailOrder, updateOrder, updateOrderAddress} from "../../../network/BillService";
+import {getDetailOrder, updateOrder, updateOrderAddress, updateQnt} from "../../../network/BillService";
 import AlertConfirm from "../../../functions/AlertConfirm";
 import AlertConfirmCancel from "../../../functions/AlertConfirmCancel";
 import AlertInput from "../../../functions/AlertInput";
@@ -64,6 +64,18 @@ function DetailBill() {
                 status: value
             },{
                 success: res=>{
+                    if (value==='3'){
+                        products.map((obj,j)=>{
+                            updateQnt({
+                                type: 'remove',
+                                id_product: obj.id_product,
+                                size_name: obj.size,
+                                qnt: obj.amount
+                            },{
+                                refLoading
+                            })
+                        })
+                    }
                     value === '0' ? setColor('#000000') : value ==='1' ? setColor('#006dff') : value === '2' ? setColor('#18ff00') : setColor('red')
                     setStatus(value)
                 },

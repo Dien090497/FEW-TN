@@ -1,4 +1,4 @@
-import {get, put} from './http/HttpClient';
+import {get, post, put} from './http/HttpClient';
 
 import {order} from './http/ApiUrl';
 
@@ -46,6 +46,19 @@ export function updateOrderAddress(
 ) {
   const url = [order,'update-order','address',id_bill].join('/');
   return put(url, {
+    body,
+    success,
+    failure,
+    refLoading
+  });
+}
+
+export function updateQnt(
+  body,
+  {success, failure, refLoading = null} = {},
+) {
+  const url = [order,'qnt'].join('/');
+  return post(url, {
     body,
     success,
     failure,

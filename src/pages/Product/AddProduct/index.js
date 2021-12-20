@@ -98,7 +98,7 @@ function AddProduct() {
                             <input
                                 className='textInput'
                                 type="number" name="export_price"
-                                placeholder={"Nhập giá bán"}
+                                placeholder={"Nhập giá bán ($)"}
                                 aria-valuemin={1}
                                 step={1}
                                 min={1}
@@ -109,7 +109,7 @@ function AddProduct() {
                             <input
                                 className='textInput'
                                 type="number" name="impot_price"
-                                placeholder={"Nhập giá nhập"}
+                                placeholder={"Nhập giá nhập ($)"}
                                 step={1}
                                 required={true}
                                 min={1}
@@ -242,6 +242,7 @@ function AddProduct() {
                                                         newQnt[i] = parseInt(v.target.value);
                                                         setQnt(newQnt)
                                                     }}
+                                                    min={1}
                                                 />
                                             </div>
                                         </div>
