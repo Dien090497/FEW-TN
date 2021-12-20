@@ -50,33 +50,36 @@ function AddProduct() {
     };
 
     const handleSubmit = (e) =>{
-        if(qnt.length === 0 ) return refAlert.current.open('Chưa có số lượng !!!',Images.error,()=>{})
-        e.preventDefault();
-        // history.push('/')
-        const data ={}
-        data.name = name
-        data.export_price = Number(price);
-        data.impot_price = Number(importPrice);
-        data.sale = Number(sale);
-        data.id_category = parseInt(category);
-        data.id_style = parseInt(style);
-        data.id_brand = parseInt(brand);
-        data.pictureProduct = avatar;
-        data.description = description;
-        data.size = size;
-        data.qnt = qnt;
-        addProductApi(data,{
-            success: res =>{
-                refAlert.current.open('Thêm thành công',Images.success,()=>{
-                    history.goBack()
-                })
+        if(qnt.length === 0 ) {
+            return refAlert.current.open('Chưa có số lượng !!!',Images.error,()=>{})
+        }else {
+            e.preventDefault();
+            const data ={}
+            data.name = name
+            data.export_price = Number(price);
+            data.impot_price = Number(importPrice);
+            data.sale = Number(sale);
+            data.id_category = parseInt(category);
+            data.id_style = parseInt(style);
+            data.id_brand = parseInt(brand);
+            data.pictureProduct = avatar;
+            data.description = description;
+            data.size = size;
+            data.qnt = qnt;
+            addProductApi(data,{
+                success: res =>{
+                    refAlert.current.open('Thêm thành công',Images.success,()=>{
+                        history.goBack()
+                    })
 
-            },
-            failure: err =>{
-                refAlert.current.open('Thêm thất bại',Images.error,()=>{})
-            },
-            refLoading
-        })
+                },
+                failure: err =>{
+                    refAlert.current.open('Thêm thất bại',Images.error,()=>{})
+                },
+                refLoading
+            })
+        }
+
     }
 
     return (

@@ -104,6 +104,9 @@ function AddProduct() {
           history.goBack()
         })
       },
+      failure : err =>{
+        refAlert.current.open('Sửa thất bại!',Images.success,()=>{})
+      },
       refLoading
     })
   }
