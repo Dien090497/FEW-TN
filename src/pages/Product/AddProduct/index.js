@@ -50,6 +50,7 @@ function AddProduct() {
     };
 
     const handleSubmit = (e) =>{
+        if(qnt.length === 0 ) return refAlert.current.open('Chưa có số lượng !!!',Images.error,()=>{})
         e.preventDefault();
         // history.push('/')
         const data ={}
